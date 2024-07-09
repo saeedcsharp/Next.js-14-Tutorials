@@ -5,6 +5,6 @@ export default async function Layout({
 }) {
   const productsResponse = await fetch("http://localhost:3001/products");
   const products = await productsResponse.json();
-  console.log({ products });
+  // console.log({ products });
   return <>{children}</>;
 }
