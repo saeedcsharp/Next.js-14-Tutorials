@@ -1,5 +1,5 @@
-import { revalidatePath } from "next/cache";
-
+import { revalidatePath, revalidateTag } from "next/cache";
+import { Suspense } from "react";
 type Product = {
   id: number;
   title: string;
@@ -8,7 +8,7 @@ type Product = {
 };
 export default async function Shop() {
   const response = await fetch("http://localhost:3001/products", {
-    cache: "no-cache",
+  cache:"no-cache"
   });
   const products: Product[] = await response.json();
 
@@ -23,11 +23,15 @@ export default async function Shop() {
       headers: {
         "Content-Type": "application/json",
       },
+      next:{
+        tags:["products"]
+      }
     });
-    revalidatePath("http://localhost:3001/products")
+    revalidateTag("products")
   }
+
   return (
-    <div>
+    <Suspense fallback={<h1> ...Loading </h1>}>
       <form
         action={addProduct}
         className="flex flex-col gap-5 max-w-xl bg-slate-800 rounded-md p-8 mx-auto"
@@ -56,6 +60,6 @@ export default async function Shop() {
           </div>
         ))}
       </div>
-    </div>
+    </Suspense>
   );
 }
