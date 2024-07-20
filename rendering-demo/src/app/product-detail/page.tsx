@@ -1,3 +1,4 @@
+'use client'
 import { Suspense } from "react";
 
 import { Product } from "@/components/product";

@@ -28,10 +28,8 @@ export default function Shop() {
       },
     });
     const lastProduct = await response.json()
-    const newProducts = products;
-    newProducts.push(lastProduct)
-    setProducts(newProducts)
-    setRefre(!refre)
+    setProducts([...products,lastProduct])
+    // setRefre(!refre)
   };
 
   useEffect(() => {

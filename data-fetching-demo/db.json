@@ -17,6 +17,24 @@
       "title": "Product 3",
       "price": 5000,
       "description": "Description 3"
+    },
+    {
+      "description": "asaaaaaaa",
+      "price": "8000",
+      "title": "product 4",
+      "id": 4
+    },
+    {
+      "description": "asaaaaaaa",
+      "price": "18000",
+      "title": "product 5",
+      "id": 5
+    },
+    {
+      "description": "asaaaaaaa",
+      "price": "18000",
+      "title": "product 6",
+      "id": 6
     }
   ]
 }
