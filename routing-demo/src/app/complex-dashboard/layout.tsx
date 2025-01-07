@@ -11,7 +11,7 @@ export default function ComplexDashboardLayout({
   notifications: React.ReactNode;
   login: React.ReactNode;
 }) {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   return isLoggedIn ? (
     <div>
       <h1>{children}</h1>

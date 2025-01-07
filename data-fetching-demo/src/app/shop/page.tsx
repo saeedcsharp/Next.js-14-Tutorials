@@ -9,7 +9,7 @@ type Product = {
   description: string;
 };
 export default async function Shop() {
-  const response = await fetch("http://localhost:3001/products", {
+  const response = await fetch("http://localhost:4000/productsffref", {
   cache:"no-cache"
   });
   const products: Product[] = await response.json();

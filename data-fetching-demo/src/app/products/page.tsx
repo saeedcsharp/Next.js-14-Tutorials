@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 type Product = {
@@ -9,8 +8,7 @@ type Product = {
 };
 
 export default async function ProductsPage() {
-  const productsResponse = await fetch("http://localhost:3001/products", {
-  });
+  const productsResponse = await fetch("http://localhost:3001/products", {});
 
   const products = await productsResponse.json();
   return (
@@ -28,7 +26,6 @@ export default async function ProductsPage() {
           </Link>
           <p>{product.description}</p>
           <p className="text-lg font-medium">${product.price}</p>
-       
         </li>
       ))}
     </ul>

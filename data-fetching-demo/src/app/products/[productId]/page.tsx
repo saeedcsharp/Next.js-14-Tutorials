@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 type Product = {
   id: number;
   title: string;
@@ -10,11 +12,14 @@ export default async function ProductDetailPage({
 }: {
   params: { productId: number };
 }) {
+  const headersList = headers();
+  const host = headersList.get("host") as string;
   const detailsResponse = await fetch(
     `http://localhost:3001/products/${params.productId}`,
     {next:{revalidate:20}}
   );
   const details = await detailsResponse.json();
+  console.log(details)
   return (
     <li
     className="p-4 bg-white shadow-md rounded-lg text-gray-700"
